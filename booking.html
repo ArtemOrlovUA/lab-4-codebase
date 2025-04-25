@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NightPulse - Бронювання</title>
+    <meta name="description" content="Забронюйте столик або квитки на події в клубі NightPulse." />
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kolker+Brush&family=Sofia+Sans+Semi+Condensed:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="booking-style.css" />
+  </head>
+  <body class="page-booking">
+    <header class="site-header">
+      <div class="container header-content">
+        <a href="index.html" class="logo">NightPulse</a>
+        <nav class="main-nav">
+          <a href="index.html#about" class="nav-link nav-about">Про наш заклад</a>
+          <span class="separator">|</span>
+          <a href="calendar.html" class="nav-link nav-calendar">Календар подій</a>
+          <span class="separator">|</span>
+          <a href="#contact" class="nav-link nav-contacts">Контакти</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page-content">
+      <div class="container">
+        <section class="booking-section">
+          <h1 class="booking-main-title">Форма бронювання</h1>
+
+          <form id="booking-form" novalidate>
+            <div class="form-group">
+              <label for="booking-name" class="visually-hidden">Ваше ім’я та прізвище</label>
+              <input
+                type="text"
+                id="booking-name"
+                name="booking-name"
+                placeholder="Ваше ім’я та прізвище"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="booking-phone" class="visually-hidden">Ваш номер телефону</label>
+              <input
+                type="tel"
+                id="booking-phone"
+                name="booking-phone"
+                placeholder="Ваш номер телефону"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="booking-tickets" class="visually-hidden"
+                >Кількість квитків (максимум - 3)</label
+              >
+              <input
+                type="number"
+                id="booking-tickets"
+                name="booking-tickets"
+                placeholder="Кількість квитків (максимум - 3)"
+                required
+                min="1"
+                max="3"
+              />
+            </div>
+
+            <button type="submit" class="booking-submit-button">Підтвердити бронь</button>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        const form = document.getElementById('booking-form');
+        const nameInput = document.getElementById('booking-name');
+        const phoneInput = document.getElementById('booking-phone');
+        const ticketsInput = document.getElementById('booking-tickets');
+
+        form.addEventListener('submit', function (event) {
+          event.preventDefault();
+
+          const name = nameInput.value.trim();
+          const phone = phoneInput.value.trim();
+          const tickets = ticketsInput.value.trim();
+          const ticketsNum = parseInt(tickets, 10);
+
+          let errors = [];
+          if (name === '') {
+            errors.push("Будь ласка, введіть ім'я та прізвище.");
+          }
+          if (phone === '') {
+            errors.push('Будь ласка, введіть номер телефону.');
+          }
+          if (/[^0-9+\-\s()]/.test(phone) && phone !== '') {
+            errors.push('Номер телефону містить недійсні символи.');
+          }
+
+          if (tickets === '') {
+            errors.push('Будь ласка, введіть кількість квитків.');
+          } else if (isNaN(ticketsNum) || ticketsNum < 1 || ticketsNum > 3) {
+            errors.push('Кількість квитків повинна бути від 1 до 3.');
+          }
+
+          if (errors.length > 0) {
+            alert(errors.join('\n'));
+            return;
+          }
+
+          const confirmationMessage = `
+Дякуємо за бронювання!
+
+Ваші дані:
+Ім'я: ${name}
+Телефон: ${phone}
+Кількість квитків: ${ticketsNum}
+
+Наш менеджер зв'яжеться з вами для підтвердження.
+          `.trim();
+
+          alert(confirmationMessage);
+          form.reset();
+        });
+      });
+    </script>
+  </body>
+</html>
