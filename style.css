@@ -51,8 +51,11 @@ body::before {
 
 .site-header {
   background: rgba(0, 0, 0, 0.85);
-  border-radius: 0 0 30px 30px;
+  border-radius: 30px 30px 30px 30px;
   padding: 1rem 0;
+  margin-left: 20rem;
+  margin-right: 20rem;
+  margin-top: 2rem;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -232,6 +235,13 @@ body::before {
 .arrow-forward {
   font-size: 1.5em;
   line-height: 1;
+}
+
+@media (min-width: 992px) {
+  .site-header {
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
 }
 
 @media (min-width: 992px) {
