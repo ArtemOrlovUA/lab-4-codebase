@@ -1,0 +1,119 @@
+body.page-contacts::before {
+  background-image: url('images/karina-lago-wEucG_sLRsY-unsplash.jpg');
+  opacity: 0.5;
+  filter: blur(7px);
+}
+
+.contacts-section {
+  background: none;
+  border-radius: 32px;
+  max-width: 420px;
+  margin: 2.5rem auto 0 auto;
+  padding: 2rem 1.2rem 2.5rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contacts-map-block {
+  background: #fff;
+  border-radius: 28px 28px 0 0;
+  padding: 1.2rem 1rem 1.2rem 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.contacts-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 1rem;
+  margin-top: 0;
+}
+
+.contacts-map img {
+  width: 100%;
+  max-width: 270px;
+  border-radius: 10px;
+  margin-bottom: 0.7rem;
+}
+
+.contacts-address {
+  color: #222;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.contacts-social-block {
+  background: #000;
+  border-radius: 0 0 28px 28px;
+  padding: 1.5rem 1rem 1.2rem 1rem;
+  width: 100%;
+  text-align: center;
+}
+
+.contacts-list {
+  list-style: none;
+  padding: 0;
+  margin-left: 4.5rem;
+}
+
+.contacts-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.25rem;
+  color: #fff;
+  margin-bottom: 1.1rem;
+  justify-content: flex-start;
+}
+
+.contacts-list li:last-child {
+  margin-bottom: 0;
+}
+
+.contacts-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.2rem;
+  height: 2.2rem;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  background: #eee;
+  margin-right: 0.5rem;
+}
+
+.contacts-icon.instagram {
+  background: none;
+  color: inherit;
+}
+.contacts-icon.telegram {
+  background: #229ed9;
+  color: #fff;
+}
+.contacts-icon.phone {
+  background: #25d366;
+  color: #fff;
+}
+
+.contacts-link {
+  font-size: 1.1rem;
+  word-break: break-all;
+}
+
+.contacts-img-icon {
+  width: 2.2rem;
+  height: 2.2rem;
+  display: block;
+}
+
+@media (max-width: 500px) {
+  .contacts-section {
+    max-width: 98vw;
+    padding: 0rem 0.2rem 1.5rem 0.2rem;
+  }
+  .contacts-map img {
+    max-width: 98vw;
+  }
+}

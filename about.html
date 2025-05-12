@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NightPulse - Календар подій</title>
-    <meta
-      name="description"
-      content="Ознайомтеся з календарем запланованих подій у клубі NightPulse. Не пропустіть найгарячіші вечірки!"
-    />
+    <title>NightPulse - Про клуб</title>
+    <meta name="description" content="Про клуб NightPulse: історія, атмосфера, особливості." />
     <link rel="icon" href="favicon.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,9 +13,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="calendar-style.css" />
+    <link rel="stylesheet" href="about-style.css" />
   </head>
-  <body class="page-calendar">
+  <body class="page-about">
     <header class="site-header">
       <div class="container header-content">
         <a href="index.html" class="logo">NightPulse</a>
@@ -42,44 +39,25 @@
 
     <main class="page-content">
       <div class="container">
-        <section class="calendar-section">
-          <h1 class="calendar-main-title">Заплановані події</h1>
-          <div class="events-grid">
-            <article class="event-card">
-              <time class="event-date" datetime="2025-02-14">14.02.2025</time>
-              <img
-                class="event-image"
-                src="images/kim-becker-Uoi_Yjv3Vn0-unsplash.jpg"
-                alt="Вечірка День закоханих"
-              />
-              <h2 class="event-title">День закоханих</h2>
-              <a href="booking.html" class="event-cta-button">Квитки та столики</a>
-            </article>
-            <article class="event-card">
-              <time class="event-date" datetime="2025-02-14">14.02.2025</time>
-              <img
-                class="event-image"
-                src="images/kim-becker-Uoi_Yjv3Vn0-unsplash.jpg"
-                alt="Вечірка День закоханих"
-              />
-              <h2 class="event-title">День закоханих</h2>
-              <a href="booking.html" class="event-cta-button">Квитки та столики</a>
-            </article>
-
-            <article class="event-card">
-              <time class="event-date" datetime="2025-02-14">14.02.2025</time>
-              <img
-                class="event-image"
-                src="images/kim-becker-Uoi_Yjv3Vn0-unsplash.jpg"
-                alt="Вечірка День закоханих"
-              />
-              <h2 class="event-title">День закоханих</h2>
-              <a href="booking.html" class="event-cta-button">Квитки та столики</a>
-            </article>
+        <section class="about-section">
+          <div class="about-image-block">
+            <img src="images/david-von-diemar-0BZcsD8UVmM-unsplash.jpg" alt="NightPulse" />
+          </div>
+          <div class="about-text-block">
+            <p>
+              Ми – це справжній відрив починаючи з 2007 року. Відтоді, кожна ніч з нами була
+              особливою. Великий зал, світлове шоу, найкращі DJ виконавці, великий бар з
+              привітливими барменами – у нас є все, аби ніч пройшла непомітно!
+            </p>
+            <p style="color: red">Приходь, та переконайся сам!</p>
+            <button onclick="window.location.href='booking.html'" class="reserve-button">
+              Забронювати столик
+            </button>
           </div>
         </section>
       </div>
     </main>
+
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const menuToggle = document.getElementById('menu-toggle-button');
@@ -94,7 +72,6 @@
             document.body.classList.toggle('menu-open');
           });
 
-          // Закриття меню при кліку поза меню
           document.addEventListener('click', (e) => {
             if (
               mainNav.classList.contains('open') &&

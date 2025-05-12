@@ -3,11 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NightPulse - Календар подій</title>
-    <meta
-      name="description"
-      content="Ознайомтеся з календарем запланованих подій у клубі NightPulse. Не пропустіть найгарячіші вечірки!"
-    />
+    <title>NightPulse - Контакти</title>
+    <meta name="description" content="Контакти клубу NightPulse: адреса, соцмережі, телефон." />
     <link rel="icon" href="favicon.png" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -16,9 +13,9 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="calendar-style.css" />
+    <link rel="stylesheet" href="contacts-style.css" />
   </head>
-  <body class="page-calendar">
+  <body class="page-contacts">
     <header class="site-header">
       <div class="container header-content">
         <a href="index.html" class="logo">NightPulse</a>
@@ -42,44 +39,50 @@
 
     <main class="page-content">
       <div class="container">
-        <section class="calendar-section">
-          <h1 class="calendar-main-title">Заплановані події</h1>
-          <div class="events-grid">
-            <article class="event-card">
-              <time class="event-date" datetime="2025-02-14">14.02.2025</time>
-              <img
-                class="event-image"
-                src="images/kim-becker-Uoi_Yjv3Vn0-unsplash.jpg"
-                alt="Вечірка День закоханих"
-              />
-              <h2 class="event-title">День закоханих</h2>
-              <a href="booking.html" class="event-cta-button">Квитки та столики</a>
-            </article>
-            <article class="event-card">
-              <time class="event-date" datetime="2025-02-14">14.02.2025</time>
-              <img
-                class="event-image"
-                src="images/kim-becker-Uoi_Yjv3Vn0-unsplash.jpg"
-                alt="Вечірка День закоханих"
-              />
-              <h2 class="event-title">День закоханих</h2>
-              <a href="booking.html" class="event-cta-button">Квитки та столики</a>
-            </article>
-
-            <article class="event-card">
-              <time class="event-date" datetime="2025-02-14">14.02.2025</time>
-              <img
-                class="event-image"
-                src="images/kim-becker-Uoi_Yjv3Vn0-unsplash.jpg"
-                alt="Вечірка День закоханих"
-              />
-              <h2 class="event-title">День закоханих</h2>
-              <a href="booking.html" class="event-cta-button">Квитки та столики</a>
-            </article>
+        <section class="contacts-section">
+          <div class="contacts-map-block">
+            <h2 class="contacts-title">Ми на мапі:</h2>
+            <div class="contacts-map">
+              <img src="images/image_2025-05-09_17-36-30.png" alt="Мапа NightPulse" />
+            </div>
+            <div class="contacts-address">м. Одеса, Вул. Гарна 1234</div>
+          </div>
+          <div class="contacts-social-block">
+            <h2 class="contacts-title" style="color: #fff">Як з нами зв'язатися:</h2>
+            <ul class="contacts-list">
+              <li>
+                <span class="contacts-icon instagram"
+                  ><img
+                    src="images/image_2025-05-09_17-39-16.png"
+                    alt="Instagram"
+                    class="contacts-img-icon"
+                /></span>
+                <span class="contacts-link">night_pulse_inst</span>
+              </li>
+              <li>
+                <span class="contacts-icon telegram"
+                  ><img
+                    src="images/image_2025-05-09_17-42-29.png"
+                    alt="Telegram"
+                    class="contacts-img-icon"
+                /></span>
+                <span class="contacts-link">night_pulse_telegram</span>
+              </li>
+              <li>
+                <span class="contacts-icon phone"
+                  ><img
+                    src="images/image_2025-05-09_17-44-09.png"
+                    alt="Phone"
+                    class="contacts-img-icon"
+                /></span>
+                <span class="contacts-link">+380123456789</span>
+              </li>
+            </ul>
           </div>
         </section>
       </div>
     </main>
+
     <script>
       document.addEventListener('DOMContentLoaded', () => {
         const menuToggle = document.getElementById('menu-toggle-button');
@@ -94,7 +97,6 @@
             document.body.classList.toggle('menu-open');
           });
 
-          // Закриття меню при кліку поза меню
           document.addEventListener('click', (e) => {
             if (
               mainNav.classList.contains('open') &&
